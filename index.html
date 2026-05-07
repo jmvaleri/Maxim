@@ -16,8 +16,6 @@
       --muted:#64748b;
       --accent:#38bdf8;
       --accent2:#14b8a6;
-      --facebook:#1877f2;
-      --instagram:#e1306c;
       --shadow:0 25px 60px rgba(14,165,233,.12)
     }
     *{box-sizing:border-box}
@@ -26,15 +24,14 @@
       margin:0;
       font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
       color:var(--text);
-      background:
-        radial-gradient(1100px 700px at 20% 10%, rgba(255,255,255,.92), transparent 45%),
-        radial-gradient(900px 600px at 85% 0%, rgba(56,189,248,.20), transparent 48%),
-        linear-gradient(160deg,var(--bg1) 0%, var(--bg2) 42%, var(--bg3) 100%);
+      background: radial-gradient(1100px 700px at 20% 10%, rgba(255,255,255,.92), transparent 45%),
+                  radial-gradient(900px 600px at 85% 0%, rgba(56,189,248,.20), transparent 48%),
+                  linear-gradient(160deg,var(--bg1) 0%, var(--bg2) 42%, var(--bg3) 100%);
       display:flex;
       align-items:center;
       justify-content:center;
       padding:12px;
-      overflow-x: hidden;   /* para evitar scroll horizontal en algunos móviles */
+      overflow-x: hidden;
     }
     .card{
       width: min(520px, 96%);
@@ -47,57 +44,81 @@
       box-shadow:var(--shadow);
       position:relative
     }
-    .map-btn{
-      position:absolute;
-      top:52px;
-      right:40px;
-      width:44px;
-      height:44px;
-      background:transparent;
-      border:none;
-      border-radius:12px;
-      display:flex;
+
+    .actions{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      margin: 20px 0 15px;
+    }
+
+    .btn-large{
+      width: 118px;
+      height: 118px;
+      border-radius: 50%;
+      display: flex;
       align-items:center;
       justify-content:center;
-      box-shadow:0 8px 20px rgba(14,165,233,.22);
-      cursor:pointer;
-      text-decoration:none;
-      transition:transform .15s ease, box-shadow .15s ease;
-      z-index:10;
+      box-shadow: 0 12px 30px rgba(0,0,0,.18);
+      transition: all .25s ease;
+      overflow: hidden;
     }
-    .map-btn:hover{
-      transform:translateY(-2px);
-      box-shadow:0 12px 25px rgba(14,165,233,.3);
+    .btn-large:hover{ transform: scale(1.09) translateY(-4px); }
+
+    .btn-small{
+      width: 74px;
+      height: 74px;
+      border-radius: 50%;
+      display: flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow: 0 8px 22px rgba(0,0,0,.12);
+      transition: all .25s ease;
+      overflow: hidden;
     }
-    .map-btn:active{
-      transform:translateY(0);
+    .btn-small:hover{ transform: scale(1.12) translateY(-3px); }
+
+    .btn-large img,
+    .btn-small img {
+      width: 88%;
+      height: 88%;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,.1));
+      background: transparent;
     }
-    .map-icon{
-      width:32px;
-      height:32px;
-      object-fit:contain;
-      border-radius:12px;
-      filter:drop-shadow(0 2px 4px rgba(0,0,0,.2));
+
+    /* Colores */
+    .btn-facebook{ 
+      background: linear-gradient(145deg, #1877f2, #0e5cd8); 
     }
-    .hero{
-      padding:24px 20px 14px;
-      text-align:center;
-      background:linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,0));
-      position:relative;
+    .btn-instagram{ 
+      background: linear-gradient(145deg, #e1306c, #c02a5b); 
     }
-    .logoWrap{
-      width:98px;
-      height:98px;
-      margin:12px auto 10px;
-      background:transparent;
+    .btn-tripadvisor{ 
+      background: linear-gradient(145deg, #00af87, #008f6f);   /* Verde TripAdvisor integrado */
     }
-    .logo{
-      width:100%;
-      height:100%;
-      object-fit:contain;
-      object-position:center;
-      display:block;
+
+    /* Google y Maps con fondo blanco */
+    .btn-web, .btn-maps { 
+      background: #ffffff; 
+      box-shadow: 0 8px 20px rgba(0,0,0,.1);
     }
+    .btn-maps {
+      border: 2px solid #e5e7eb;
+    }
+
+    .large-group{ display: flex; gap: 32px; justify-content: center; }
+    .small-group{ display: flex; gap: 20px; justify-content: center; }
+
+    .hero{ 
+      padding:24px 20px 14px; 
+      text-align:center; 
+      background:linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,0)); 
+      position:relative; 
+    }
+    .logoWrap{ width:98px; height:98px; margin:12px auto 10px; }
+    .logo{ width:100%; height:100%; object-fit:contain; display:block; }
     h1{
       margin:0 0 4px;
       font-size:29px;
@@ -106,15 +127,8 @@
       background:linear-gradient(135deg, var(--accent), var(--accent2));
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
-      background-clip:text;
     }
-    .lead{
-      margin:0 auto 8px;
-      max-width:34ch;
-      color:var(--muted);
-      font-size:15px;
-      line-height:1.5;
-    }
+    .lead{ margin:0 auto 8px; max-width:34ch; color:var(--muted); font-size:15px; line-height:1.5; }
     .social-hint{
       background:linear-gradient(135deg, rgba(24,119,242,.12), rgba(225,48,108,.12));
       border:1px solid rgba(255,255,255,.4);
@@ -128,70 +142,22 @@
       text-align:center;
       box-shadow:0 8px 20px rgba(24,119,242,.10);
     }
-    .social-hint::before{
-      content:"📸 ";
-      margin-right:4px;
-    }
-    .body{
-      padding:0 20px 16px;
-    }
+    .social-hint::before{content:"📸 "; margin-right:4px;}
+
+    .body{padding:0 20px 16px;}
     .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
+      display:inline-flex; align-items:center; gap:8px;
       background:linear-gradient(180deg,#eff6ff,#f0fdfa);
-      color:#0f766e;
-      font-weight:800;
-      font-size:13px;
-      padding:9px 15px;
-      border-radius:999px;
-      margin:0 auto 14px;
-      box-shadow:inset 0 0 0 1px rgba(15,118,110,.12)
+      color:#0f766e; font-weight:800; font-size:13px;
+      padding:9px 15px; border-radius:999px; margin:0 auto 14px;
     }
     .dot{
-      width:10px;height:10px;border-radius:50%;
+      width:10px; height:10px; border-radius:50%;
       background:linear-gradient(180deg,var(--accent),var(--accent2));
-      box-shadow:0 0 0 4px rgba(56,189,248,.15)
     }
-    .actions{
-      display:grid;
-      gap:10px;
-      margin:14px 0;
-    }
-    .btn{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:14px 20px;
-      border-radius:20px;
-      text-decoration:none;
-      font-weight:900;
-      font-size:15px;
-      transition:transform .15s ease, box-shadow .15s ease, filter .15s ease;
-      letter-spacing:-.02em;
-    }
-    .btn:hover{transform:translateY(-2px)}
-    .btn:active{transform:translateY(0);filter:saturate(.95)}
-    .btn-facebook{
-      color:#fff;
-      background:linear-gradient(180deg,#4f8df7,#1d4ed8);
-      box-shadow:0 14px 28px rgba(37,99,233,.20)
-    }
-    .btn-instagram{
-      color:#fff;
-      background:linear-gradient(180deg,#ff6aa2,#c81e59);
-      box-shadow:0 14px 28px rgba(225,48,108,.20)
-    }
-    .btn-web{
-      color:#fff;
-      background:linear-gradient(180deg,var(--accent),var(--accent2));
-      box-shadow:0 14px 28px rgba(56,189,248,.22)
-    }
+
     .features{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:11px;
-      margin-top:12px;
+      display:grid; grid-template-columns:1fr 1fr; gap:11px; margin-top:12px;
     }
     .box{
       background:linear-gradient(180deg,#fbfdff,#f8fbff);
@@ -199,32 +165,15 @@
       border-radius:20px;
       padding:12px 13px 10px;
       box-shadow:0 10px 25px rgba(14,165,233,.08);
-      transition:transform .15s ease, box-shadow .15s ease;
     }
-    .box:hover{
-      transform:translateY(-2px);
-      box-shadow:0 15px 35px rgba(14,165,233,.12);
-    }
-    .box b{
-      display:block;
-      font-size:13px;
-      color:var(--text);
-      margin-bottom:5px;
-      letter-spacing:.02em
-    }
-    .box span{
-      display:block;
-      font-size:12px;
-      color:var(--muted);
-      line-height:1.4
-    }
-    .small{
-      display:block;
-      margin-top:5px;
-      font-size:11px;
-      color:#94a3b8;
-      font-weight:500
-    }
+    .box:hover{transform:translateY(-2px); box-shadow:0 15px 35px rgba(14,165,233,.12);}
+    .box-map{cursor:pointer !important; text-decoration: none !important;}
+    .box b{display:block; font-size:13px; color:var(--text); margin-bottom:5px;}
+    .box span{display:block; font-size:12px; color:var(--muted); line-height:1.4}
+
+    .box-map, .box-map b, .box-map span { text-decoration: none !important; color: inherit; }
+
+    .small{ display:block; margin-top:5px; font-size:11px; color:#94a3b8; font-weight:500 }
     .footer{
       padding:0 20px 18px;
       color:var(--muted);
@@ -232,35 +181,18 @@
       line-height:1.5;
       text-align:center;
     }
+
     @media (max-width:420px){
-      body{padding:10px}
-      .card{border-radius:26px}
-      .hero{padding:22px 18px 12px}
-      .body{padding:0 16px 14px}
-      .footer{padding:0 16px 16px}
-      .logoWrap{width:88px;height:88px; margin:10px auto 8px;}
-      h1{font-size:27px; margin-bottom:3px;}
-      .features{grid-template-columns:1fr; gap:10px;}
-      .lead{font-size:14px; margin-bottom:6px;}
-      .btn{padding:13px 18px}
-      .social-hint{padding:9px 13px; margin-bottom:12px; font-size:12px;}
-      .map-btn{top:46px; right:34px; width:40px; height:40px;}
-      .map-icon{width:30px; height:30px;}
+      .btn-large{width:108px; height:108px;}
+      .btn-small{width:68px; height:68px;}
+      .large-group{gap:26px;}
+      .small-group{gap:16px;}
     }
   </style>
 </head>
 <body>
-  <main class="card" role="main" aria-label="Página de bienvenida Wi‑Fila">
+  <main class="card" role="main">
     <section class="hero">
-      <!-- BOTÓN CON IMAGEN CUSTOMIZABLE (tu logo de la rueda / molino) -->
-      <a href="https://www.google.com/maps/search/?api=1&amp;query=Passeig+de+Sa+Caleta%2C+20%2C+17310+Lloret+de+Mar%2C+Girona" 
-         class="map-btn" 
-         target="_blank" 
-         rel="noopener noreferrer" 
-         title="Abrir en Google Maps">
-        <img class="map-icon" src="imgprueba2.jpg" alt="Icono del restaurante (rueda/molino)" loading="lazy">
-      </a>
-      
       <div class="logoWrap">
         <img class="logo" src="imgprueba.jpg" alt="Logo del restaurante" loading="lazy">
       </div>
@@ -274,17 +206,30 @@
     
     <section class="body">
       <div class="pill"><span class="dot"></span> Accés autoritzat / Acceso autorizado</div>
+      
       <div class="actions">
-        <a class="btn btn-facebook" href="https://www.facebook.com/maximrestaurantlloret" target="_blank" rel="noopener noreferrer">
-          Facebook
-        </a>
-        <a class="btn btn-instagram" href="https://www.instagram.com/maximrestaurantlloret" target="_blank" rel="noopener noreferrer">
-          Instagram
-        </a>
-        <a class="btn btn-web" href="https://www.google.com" target="_blank" rel="noopener noreferrer">
-          Continuar navegando
-        </a>
+        <div class="large-group">
+          <a class="btn-large btn-facebook" href="https://www.facebook.com/maximrestaurantlloret" target="_blank" rel="noopener noreferrer" title="Facebook">
+            <img src="imgface.png" alt="Facebook" loading="lazy">
+          </a>
+          <a class="btn-large btn-instagram" href="https://www.instagram.com/maximrestaurantlloret" target="_blank" rel="noopener noreferrer" title="Instagram">
+            <img src="imginsta.png" alt="Instagram" loading="lazy">
+          </a>
+        </div>
+
+        <div class="small-group">
+          <a class="btn-small btn-tripadvisor" href="https://www.tripadvisor.com/Restaurant_Review-g494960-d4554851-Reviews-Restaurante_Maxim-Lloret_de_Mar_Costa_Brava_Province_of_Girona_Catalonia.html" target="_blank" rel="noopener noreferrer" title="TripAdvisor">
+            <img src="imgtrip.png" alt="TripAdvisor" loading="lazy">
+          </a>
+          <a class="btn-small btn-web" href="https://www.google.com/search?q=Restaurante+Maxim+Lloret+de+Mar" target="_blank" rel="noopener noreferrer" title="Ver en Google">
+            <img src="imggoogle.png" alt="Google" loading="lazy">
+          </a>
+          <a class="btn-small btn-maps" href="https://www.google.com/maps/search/?api=1&amp;query=Passeig+de+Sa+Caleta%2C+20%2C+17310+Lloret+de+Mar%2C+Girona" target="_blank" rel="noopener noreferrer" title="Google Maps">
+            <img src="imgprueba2.png" alt="Google Maps" loading="lazy">
+          </a>
+        </div>
       </div>
+
       <div class="features">
         <div class="box">
           <b>CAT</b>
@@ -294,10 +239,11 @@
           <b>ESP</b>
           <span>Bienvenido a nuestro local. Tienes conexión durante 2 horas.</span>
         </div>
-        <div class="box">
+        <a href="https://www.google.com/maps/search/?api=1&query=Passeig+de+Sa+Caleta%2C+20%2C+17310+Lloret+de+Mar%2C+Girona" 
+           class="box box-map" target="_blank" rel="noopener noreferrer" title="Abrir ubicación en Google Maps">
           <b>ADREÇA / DIRECCIÓN</b>
           <span>Passeig de Sa Caleta, 20 · 17310 (Girona)</span>
-        </div>
+        </a>
         <div class="box">
           <b>TELÈFON / TELÉFONO</b>
           <span>972 365 179</span>
