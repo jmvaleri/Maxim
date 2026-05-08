@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="utf-8">
@@ -31,11 +31,11 @@
       align-items:center;
       justify-content:center;
       padding:12px;
-      overflow-x: hidden;
+      overflow-x:hidden;
     }
     .card{
-      width: min(520px, 96%);
-      max-width: 520px;
+      width:min(520px,96%);
+      max-width:520px;
       background:var(--card);
       backdrop-filter:blur(20px);
       border:1px solid rgba(255,255,255,.85);
@@ -44,93 +44,85 @@
       box-shadow:var(--shadow);
       position:relative
     }
-
     .actions{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 24px;
-      margin: 20px 0 15px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:24px;
+      margin:20px 0 15px
     }
-
     .btn-large{
-      width: 118px;
-      height: 118px;
-      border-radius: 50%;
-      display: flex;
+      width:118px;
+      height:118px;
+      border-radius:50%;
+      display:flex;
       align-items:center;
       justify-content:center;
-      box-shadow: 0 12px 30px rgba(0,0,0,.18);
-      transition: all .25s ease;
-      overflow: hidden;
+      box-shadow:0 12px 30px rgba(0,0,0,.18);
+      transition:all .25s ease;
+      overflow:hidden
     }
-    .btn-large:hover{ transform: scale(1.09) translateY(-4px); }
-
+    .btn-large:hover{transform:scale(1.09) translateY(-4px)}
     .btn-small{
-      width: 74px;
-      height: 74px;
-      border-radius: 50%;
-      display: flex;
+      width:74px;
+      height:74px;
+      border-radius:50%;
+      display:flex;
       align-items:center;
       justify-content:center;
-      box-shadow: 0 8px 22px rgba(0,0,0,.12);
-      transition: all .25s ease;
-      overflow: hidden;
+      box-shadow:0 8px 22px rgba(0,0,0,.12);
+      transition:all .25s ease;
+      overflow:hidden
     }
-    .btn-small:hover{ transform: scale(1.12) translateY(-3px); }
-
-    .btn-large img,
-    .btn-small img {
-      width: 88%;
-      height: 88%;
-      object-fit: contain;
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,.1));
-      background: transparent;
+    .btn-small:hover{transform:scale(1.12) translateY(-3px)}
+    .btn-large img,.btn-small img{
+      width:88%;
+      height:88%;
+      object-fit:contain;
+      filter:drop-shadow(0 2px 4px rgba(0,0,0,.1));
+      background:transparent
     }
-
-    /* Colores */
-    .btn-facebook{ 
-      background: linear-gradient(145deg, #1877f2, #0e5cd8); 
+    .btn-facebook{background:linear-gradient(145deg,#1877f2,#0e5cd8)}
+    .btn-instagram{background:linear-gradient(145deg,#e1306c,#c02a5b)}
+    .btn-tripadvisor{background:linear-gradient(145deg,#00af87,#008f6f)}
+    .btn-web,.btn-maps{background:#fff;box-shadow:0 8px 20px rgba(0,0,0,.1)}
+    .btn-maps{border:2px solid #e5e7eb}
+    .large-group{display:flex;gap:32px;justify-content:center}
+    .small-group{display:flex;gap:20px;justify-content:center}
+    .hero{
+      padding:18px 20px 10px;
+      text-align:center;
+      background:linear-gradient(180deg,rgba(255,255,255,.85),rgba(255,255,255,0));
+      position:relative
     }
-    .btn-instagram{ 
-      background: linear-gradient(145deg, #e1306c, #c02a5b); 
-    }
-    .btn-tripadvisor{ 
-      background: linear-gradient(145deg, #00af87, #008f6f);   /* Verde TripAdvisor integrado */
-    }
-
-    /* Google y Maps con fondo blanco */
-    .btn-web, .btn-maps { 
-      background: #ffffff; 
-      box-shadow: 0 8px 20px rgba(0,0,0,.1);
-    }
-    .btn-maps {
-      border: 2px solid #e5e7eb;
-    }
-
-    .large-group{ display: flex; gap: 32px; justify-content: center; }
-    .small-group{ display: flex; gap: 20px; justify-content: center; }
-
-    .hero{ 
-      padding:24px 20px 14px; 
-      text-align:center; 
-      background:linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,0)); 
-      position:relative; 
-    }
-    .logoWrap{ width:98px; height:98px; margin:12px auto 10px; }
-    .logo{ width:100%; height:100%; object-fit:contain; display:block; }
+    .logoWrap{width:98px;height:98px;margin:12px auto 10px}
+    .logo{width:100%;height:100%;object-fit:contain;display:block}
     h1{
-      margin:0 0 4px;
+      margin:0 0 8px;
       font-size:29px;
       line-height:1.02;
       letter-spacing:-.05em;
-      background:linear-gradient(135deg, var(--accent), var(--accent2));
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
       -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
+      -webkit-text-fill-color:transparent
     }
-    .lead{ margin:0 auto 8px; max-width:34ch; color:var(--muted); font-size:15px; line-height:1.5; }
+    .title-sub{
+      margin:0 auto 14px;
+      max-width:40ch;
+      color:var(--accent);
+      font-size:13px;
+      line-height:1.35;
+      font-weight:700
+    }
+    .lead{
+      margin:0 auto 8px;
+      max-width:34ch;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.5
+    }
     .social-hint{
-      background:linear-gradient(135deg, rgba(24,119,242,.12), rgba(225,48,108,.12));
+      background:linear-gradient(135deg,rgba(24,119,242,.12),rgba(225,48,108,.12));
       border:1px solid rgba(255,255,255,.4);
       border-radius:18px;
       padding:10px 14px;
@@ -140,24 +132,34 @@
       color:var(--text);
       font-weight:600;
       text-align:center;
-      box-shadow:0 8px 20px rgba(24,119,242,.10);
+      box-shadow:0 8px 20px rgba(24,119,242,.10)
     }
-    .social-hint::before{content:"📸 "; margin-right:4px;}
-
-    .body{padding:0 20px 16px;}
+    .social-hint::before{content:"📸 ";margin-right:4px}
+    .body{padding:0 20px 16px}
     .pill{
-      display:inline-flex; align-items:center; gap:8px;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
       background:linear-gradient(180deg,#eff6ff,#f0fdfa);
-      color:#0f766e; font-weight:800; font-size:13px;
-      padding:9px 15px; border-radius:999px; margin:0 auto 14px;
+      color:#0f766e;
+      font-weight:800;
+      font-size:13px;
+      padding:9px 15px;
+      border-radius:999px;
+      margin:0 auto 14px
     }
-    .dot{
-      width:10px; height:10px; border-radius:50%;
-      background:linear-gradient(180deg,var(--accent),var(--accent2));
+    .dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(180deg,var(--accent),var(--accent2))}
+    .features-connection{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:11px;
+      margin-top:12px
     }
-
-    .features{
-      display:grid; grid-template-columns:1fr 1fr; gap:11px; margin-top:12px;
+    .features-contact{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:11px;
+      margin-top:12px
     }
     .box{
       background:linear-gradient(180deg,#fbfdff,#f8fbff);
@@ -165,28 +167,50 @@
       border-radius:20px;
       padding:12px 13px 10px;
       box-shadow:0 10px 25px rgba(14,165,233,.08);
+      text-align:center;
+      min-width:0;
+      overflow:hidden;
+      width:100%
     }
-    .box:hover{transform:translateY(-2px); box-shadow:0 15px 35px rgba(14,165,233,.12);}
-    .box-map{cursor:pointer !important; text-decoration: none !important;}
-    .box b{display:block; font-size:13px; color:var(--text); margin-bottom:5px;}
-    .box span{display:block; font-size:12px; color:var(--muted); line-height:1.4}
-
-    .box-map, .box-map b, .box-map span { text-decoration: none !important; color: inherit; }
-
-    .small{ display:block; margin-top:5px; font-size:11px; color:#94a3b8; font-weight:500 }
+    .box:hover{transform:translateY(-2px);box-shadow:0 15px 35px rgba(14,165,233,.12)}
+    .box b{
+      display:block;
+      font-size:13px;
+      color:var(--text);
+      margin-bottom:5px;
+      font-weight:800;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis
+    }
+    .box span{
+      display:block;
+      font-size:12px;
+      color:var(--muted);
+      line-height:1.35;
+      white-space:normal;
+      overflow-wrap:anywhere;
+      word-break:break-word;
+      max-width:100%
+    }
     .footer{
       padding:0 20px 18px;
       color:var(--muted);
       font-size:12px;
       line-height:1.5;
-      text-align:center;
+      text-align:center
     }
-
     @media (max-width:420px){
-      .btn-large{width:108px; height:108px;}
-      .btn-small{width:68px; height:68px;}
-      .large-group{gap:26px;}
-      .small-group{gap:16px;}
+      .btn-large{width:108px;height:108px}
+      .btn-small{width:68px;height:68px}
+      .large-group{gap:26px}
+      .small-group{gap:16px}
+      .body{padding:0 16px 16px}
+      .features-connection,.features-contact{grid-template-columns:1fr 1fr;gap:10px}
+      .box{padding:11px 10px 9px}
+      .box b{font-size:12px}
+      .box span{font-size:11px}
+      .title-sub{max-width:34ch}
     }
   </style>
 </head>
@@ -197,64 +221,33 @@
         <img class="logo" src="imgprueba.jpg" alt="Logo del restaurante" loading="lazy">
       </div>
       <h1>Benvingut / Bienvenido</h1>
+      <div class="title-sub">Welcome / Bienvenue / Herzlich willkommen / добро пожаловать</div>
       <p class="lead">La WiFi Restaurant MAXIM ya te espera. Conéctate, disfruta y recuerda seguirnos en tus redes sociales 😉</p>
-      
-      <div class="social-hint">
-        Etiqueta @maximrestaurantlloret en tus fotos, danos LIKE y síguenos 😊
-      </div>
+      <div class="social-hint">Etiqueta @maximrestaurantlloret en tus fotos, danos LIKE y síguenos 😊</div>
     </section>
-    
     <section class="body">
       <div class="pill"><span class="dot"></span> Accés autoritzat / Acceso autorizado</div>
-      
       <div class="actions">
         <div class="large-group">
-          <a class="btn-large btn-facebook" href="https://www.facebook.com/maximrestaurantlloret" target="_blank" rel="noopener noreferrer" title="Facebook">
-            <img src="imgface.png" alt="Facebook" loading="lazy">
-          </a>
-          <a class="btn-large btn-instagram" href="https://www.instagram.com/maximrestaurantlloret" target="_blank" rel="noopener noreferrer" title="Instagram">
-            <img src="imginsta.png" alt="Instagram" loading="lazy">
-          </a>
+          <a class="btn-large btn-facebook" href="https://www.facebook.com/maximrestaurantlloret" target="_blank" rel="noopener noreferrer" title="Facebook"><img src="imgface.png" alt="Facebook" loading="lazy"></a>
+          <a class="btn-large btn-instagram" href="https://www.instagram.com/maximrestaurantlloret" target="_blank" rel="noopener noreferrer" title="Instagram"><img src="imginsta.png" alt="Instagram" loading="lazy"></a>
         </div>
-
         <div class="small-group">
-          <a class="btn-small btn-tripadvisor" href="https://www.tripadvisor.com/Restaurant_Review-g494960-d4554851-Reviews-Restaurante_Maxim-Lloret_de_Mar_Costa_Brava_Province_of_Girona_Catalonia.html" target="_blank" rel="noopener noreferrer" title="TripAdvisor">
-            <img src="imgtrip.png" alt="TripAdvisor" loading="lazy">
-          </a>
-          <a class="btn-small btn-web" href="https://www.google.com/search?q=Restaurante+Maxim+Lloret+de+Mar" target="_blank" rel="noopener noreferrer" title="Ver en Google">
-            <img src="imggoogle.png" alt="Google" loading="lazy">
-          </a>
-          <a class="btn-small btn-maps" href="https://www.google.com/maps/search/?api=1&amp;query=Passeig+de+Sa+Caleta%2C+20%2C+17310+Lloret+de+Mar%2C+Girona" target="_blank" rel="noopener noreferrer" title="Google Maps">
-            <img src="imgprueba2.png" alt="Google Maps" loading="lazy">
-          </a>
+          <a class="btn-small btn-tripadvisor" href="https://www.tripadvisor.com/Restaurant_Review-g494960-d4554851-Reviews-Restaurante_Maxim-Lloret_de_Mar_Costa_Brava_Province_of_Girona_Catalonia.html" target="_blank" rel="noopener noreferrer" title="TripAdvisor"><img src="imgtrip.png" alt="TripAdvisor" loading="lazy"></a>
+          <a class="btn-small btn-web" href="https://www.google.com/search?q=Restaurante+Maxim+Lloret+de+Mar" target="_blank" rel="noopener noreferrer" title="Ver en Google"><img src="imggoogle.png" alt="Google" loading="lazy"></a>
+          <a class="btn-small btn-maps" href="https://www.google.com/maps/search/?api=1&amp;query=Passeig+de+Sa+Caleta%2C+20%2C+17310+Lloret+de+Mar%2C+Girona" target="_blank" rel="noopener noreferrer" title="Google Maps"><img src="imgprueba2.png" alt="Google Maps" loading="lazy"></a>
         </div>
       </div>
-
-      <div class="features">
-        <div class="box">
-          <b>CAT</b>
-          <span>Benvingut al nostre espai. Tens connexió durant 2 hores.</span>
-        </div>
-        <div class="box">
-          <b>ESP</b>
-          <span>Bienvenido a nuestro local. Tienes conexión durante 2 horas.</span>
-        </div>
-        <a href="https://www.google.com/maps/search/?api=1&query=Passeig+de+Sa+Caleta%2C+20%2C+17310+Lloret+de+Mar%2C+Girona" 
-           class="box box-map" target="_blank" rel="noopener noreferrer" title="Abrir ubicación en Google Maps">
-          <b>ADREÇA / DIRECCIÓN</b>
-          <span>Passeig de Sa Caleta, 20 · 17310 (Girona)</span>
-        </a>
-        <div class="box">
-          <b>TELÈFON / TELÉFONO</b>
-          <span>972 365 179</span>
-          <span class="small">Atenció al client / Atención al cliente</span>
-        </div>
+      <div class="features-connection">
+        <div class="box"><b>CAT / ESP</b><span>Tens / Tienes 2 hores de connexió / 2 horas de conexión</span></div>
+        <div class="box"><b>ENG / FRA / DE / RU</b><span>You have 2 hours connection / Vous avez 2h connexion / Herzlich willkommen / добро пожаловать</span></div>
+      </div>
+      <div class="features-contact">
+        <div class="box"><b>DIRECCIÓ / DIRECCIÓN</b><span>Passeig de Sa Caleta, 20, 17310 Lloret de Mar, Girona</span></div>
+        <div class="box"><b>TELÈFON / TELÉFONO</b><span>+34 972 36 57 57</span></div>
       </div>
     </section>
-    
-    <div class="footer">
-      Recomanem compartir fotos i etiquetar-nos a Facebook o Instagram si necessites ajuda.
-    </div>
+    <div class="footer">Recomanem compartir fotos i etiquetar-nos a Facebook o Instagram si necessites ajuda.</div>
   </main>
 </body>
 </html>
